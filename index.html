@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Эпистоизм — философия устойчивости</title>
+
+    <!-- Подключаем шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+    <!-- Фавикон -->
+    <link rel="icon" type="image/png" href="images/logo.png" />
+
+    <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== БЛОК 1: ШАПКА ===== -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <!-- Логотип УБРАН -->
+            <!-- <div class="header__logo">
+                <a href="#">Эпистоизм</a>
+            </div> -->
+            <nav class="header__nav" id="mainNav">
+                <ul>
+                    <li><a href="#hero" class="active">Эпистоизм</a></li>
+                    <li><a href="#core">Основа</a></li>
+                    <li><a href="#practice">Применение</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header__socials">
+                <a href="mailto:epistoism@mail.ru" aria-label="Email">
+                    <img src="images/icon-email.png" alt="Email" width="24" height="24" />
+                </a>
+                <a href="https://t.me/epistoic" target="_blank" aria-label="Telegram">
+                    <img src="images/icon-telegram.png" alt="Telegram" width="24" height="24" />
+                </a>
+                <a href="https://dzen.ru/id/683c8e726a52081ccf9ba916" target="_blank" aria-label="Дзен">
+                    <img src="images/icon-dzen.png" alt="Дзен" width="24" height="24" />
+                </a>
+                <a href="https://pin.it/5WIznLul4" target="_blank" aria-label="Pinterest">
+                    <img src="images/icon-pinterest.png" alt="Pinterest" width="24" height="24" />
+                </a>
+            </div>
+            <button class="burger" id="burgerBtn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== БЛОК 2: HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <h1 class="hero__title">
+                ЭПИСТОИЗМ –<br>
+                ФИЛОСОФИЯ<br>
+                УСТОЙЧИВОСТИ
+            </h1>
+            <p class="hero__subtitle">
+                Думай как стоик, живи как эпикуреец, действуй как даос,<br>
+                знай меру как мудрец
+            </p>
+            <p class="hero__desc">
+                Это образ жизни, в котором ваш внутренний мир не зависит от внешнего
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 3: "Почему современный человек..." ===== -->
+    <section class="section section--white" id="why">
+        <div class="container">
+            <h2 class="section__title section__title--small">Почему современный человек теряет внутреннюю опору</h2>
+            <div class="text-center">
+                <p class="text-block text-block--center">
+                    Мы живём быстрее, чем успеваем осмыслить происходящее.<br><br>
+                    События сменяют друг друга, как в калейдоскопе, не дают собраться с мыслями и спокойно всё обдумать.<br><br>
+                    Внимание постоянно перескакивает с одного на другое, и в какой-то момент становится трудно различать действительно важное.<br><br>
+                    В итоге человек теряет опору: не может сосредоточиться, решения принимаются на ходу, реакции опережают понимание.<br><br>
+                    Внутреннее начинает зависеть от внешнего.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 4: "Эпистоизм — практическое решение" ===== -->
+    <section class="section section--beige" id="solution">
+        <div class="container">
+            <div class="grid grid--2">
+                <div class="grid__text">
+                    <h2 class="section__title section__title--left">Эпистоизм — практическое решение</h2>
+                    <p class="text-block text-block--left">Это не теория и не набор идей. Это образ жизни, который помогает:</p>
+                    <ul class="list">
+                        <li>— сохранять ясность мышления</li>
+                        <li>— не вовлекаться в лишнюю суету</li>
+                        <li>— действовать без лишнего напряжения</li>
+                        <li>— находить баланс в повседневной жизни</li>
+                    </ul>
+                    <p class="italic">Без крайностей. Без перегрузок. Без внутреннего конфликта.</p>
+                </div>
+                <div class="grid__image">
+                    <img src="images/practice.jpg" alt="Практическое решение" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 5: Четыре опоры ===== -->
+    <section class="section section--white" id="core">
+        <div class="container">
+            <h2 class="section__title section__title--large">Четыре опоры внутренней гармонии</h2>
+            <p class="section__subtitle">Тетрас Эпистоизма</p>
+            <div class="grid grid--4">
+                <div class="card">
+                    <img src="images/stoicism.png" alt="Стоицизм" loading="lazy" />
+                    <h3>Стоицизм</h3>
+                    <p>Ясность мышления:<br>Различай, что зависит от тебя.<br>Не трать силы на лишнее.</p>
+                </div>
+                <div class="card">
+                    <img src="images/epicureanism.png" alt="Эпикуреизм" loading="lazy" />
+                    <h3>Эпикуреизм</h3>
+                    <p>Простота:<br>Радость в простых вещах.<br>Спокойная жизнь без излишеств.</p>
+                </div>
+                <div class="card">
+                    <img src="images/taoism.png" alt="Даосизм" loading="lazy" />
+                    <h3>Даосизм</h3>
+                    <p>Естественность:<br>Действуй по ситуации.<br>Следуй потоку жизни.</p>
+                </div>
+                <div class="card">
+                    <img src="images/wisdom.png" alt="Мудрость" loading="lazy" />
+                    <h3>Мудрость</h3>
+                    <p>Мера:<br>Знай, где остановиться.<br>Баланс важнее крайностей.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="https://dzen.ru/a/abkz1mRFvlEbyNlS?share_to=link" class="btn btn--light" target="_blank">Узнать больше</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 6: "Баланс вместо крайностей" ===== -->
+    <section class="section section--beige" id="balance">
+        <div class="container">
+            <h2 class="section__title section__title--small">Баланс вместо крайностей</h2>
+            <div class="text-center">
+                <p class="text-block text-block--center">
+                    Эпистоизм — это практическая философия жизни.<br><br>
+                    Не нужно быть жестким.<br>
+                    Не нужно гнаться за удовольствиями.<br>
+                    И не нужно избегать реальной жизни.<br><br>
+                    Достаточно сохранять ясность мышления,<br>
+                    жить просто,<br>
+                    действовать гибко<br>
+                    и знать меру.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 7: "Где это работает" ===== -->
+    <section class="section section--gray" id="practice">
+        <div class="container">
+            <h2 class="section__title section__title--medium">Где это работает</h2>
+            <ul class="list--lined">
+                <li><strong>Мышление</strong> 🧠 Сохранять ясность ума в любых ситуациях</li>
+                <li><strong>Эмоции</strong> ❤️ Не терять контроль над собой под давлением</li>
+                <li><strong>Жизнь</strong> 🌿 Жить проще, без лишнего пафоса и напряжения</li>
+                <li><strong>Решения</strong> ⚖️ Принимать спокойно, взвешенно, без импульса</li>
+            </ul>
+            <div class="text-center">
+                <a href="https://dzen.ru/id/683c8e726a52081ccf9ba916?share_to=link" class="btn btn--white" target="_blank">Смотреть примеры</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 8: Галерея ===== -->
+    <section class="section section--white" id="gallery">
+        <div class="container">
+            <h2 class="section__title section__title--medium">Как это выглядит в жизни</h2>
+            <p class="section__subtitle">Визуальный эпистоизм</p>
+            <div class="slider" id="slider">
+                <div class="slider__track" id="sliderTrack">
+                    <div class="slider__slide"><img src="images/gallery-1.webp" alt="Слайд 1" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-2.webp" alt="Слайд 2" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-3.jpg" alt="Слайд 3" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-4.jpg" alt="Слайд 4" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-5.jpg" alt="Слайд 5" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-6.jpg" alt="Слайд 6" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-7.webp" alt="Слайд 7" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-8.webp" alt="Слайд 8" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-9.webp" alt="Слайд 9" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-10.webp" alt="Слайд 10" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-11.webp" alt="Слайд 11" loading="lazy" /></div>
+                    <div class="slider__slide"><img src="images/gallery-12.jpg" alt="Слайд 12" loading="lazy" /></div>
+                </div>
+                <button class="slider__arrow slider__arrow--prev" id="prevBtn">‹</button>
+                <button class="slider__arrow slider__arrow--next" id="nextBtn">›</button>
+                <div class="slider__dots" id="dotsContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== МОДАЛЬНОЕ ОКНО ДЛЯ ГАЛЕРЕИ (ПОЛНЫЙ ЭКРАН) ===== -->
+    <div class="modal" id="imageModal">
+        <span class="modal__close" id="modalClose">&times;</span>
+        <img class="modal__content" id="modalImage" src="" alt="Увеличенное изображение">
+    </div>
+
+    <!-- ===== БЛОК 9: "Это не идея. Это образ жизни" ===== -->
+    <section class="section section--final" id="final">
+        <div class="section__overlay"></div>
+        <div class="container">
+            <h2 class="section__title section__title--white">Это не идея. Это образ жизни</h2>
+            <p class="section__desc section__desc--white">
+                Ясность мышления, простота, гибкость и чувство меры создают внутреннюю гармонию и устойчивость
+            </p>
+            <!-- СТРЕЛКА С ССЫЛКОЙ ВНИЗУ ПО ЦЕНТРУ -->
+            <div class="final__arrow">
+                <a href="https://www.pinterest.com/Epistoism/" target="_blank" class="arrow-link">
+                    Визуальное воплощение философии →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 10: Контакты ===== -->
+    <section class="section section--white" id="contacts">
+        <div class="container">
+            <h2 class="section__title section__title--large">Контакты</h2>
+            <p class="section__subtitle">Если вам откликается такой подход к жизни — можно написать</p>
+            <div class="contacts">
+                <p><strong>Telegram:</strong> <a href="https://t.me/epistoic" target="_blank">@epistoic</a></p>
+                <p><strong>Email:</strong> <a href="mailto:epistoism@mail.ru">epistoism@mail.ru</a></p>
+                <div class="social-links social-links--dark">
+                    <a href="mailto:epistoism@mail.ru" aria-label="Email">
+                        <img src="images/icon-email.png" alt="Email" width="32" height="32" />
+                    </a>
+                    <a href="https://t.me/epistoic" target="_blank" aria-label="Telegram">
+                        <img src="images/icon-telegram.png" alt="Telegram" width="32" height="32" />
+                    </a>
+                    <a href="https://dzen.ru/id/683c8e726a52081ccf9ba916" target="_blank" aria-label="Дзен">
+                        <img src="images/icon-dzen.png" alt="Дзен" width="32" height="32" />
+                    </a>
+                    <a href="https://pin.it/5WIznLul4" target="_blank" aria-label="Pinterest">
+                        <img src="images/icon-pinterest.png" alt="Pinterest" width="32" height="32" />
+                    </a>
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="https://dzen.ru/id/683c8e726a52081ccf9ba916" class="link--underline link--underline-dark" target="_blank">140+ статей об Эпистоизме →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 11: Подвал ===== -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <p>© Эпистоизм. Философия устойчивости как образ жизни</p>
+            <div class="social-links social-links--footer">
+                <a href="mailto:epistoism@mail.ru" aria-label="Email">
+                    <img src="images/icon-email.png" alt="Email" width="20" height="20" />
+                </a>
+                <a href="https://t.me/epistoic" target="_blank" aria-label="Telegram">
+                    <img src="images/icon-telegram.png" alt="Telegram" width="20" height="20" />
+                </a>
+                <a href="https://dzen.ru/id/683c8e726a52081ccf9ba916" target="_blank" aria-label="Дзен">
+                    <img src="images/icon-dzen.png" alt="Дзен" width="20" height="20" />
+                </a>
+                <a href="https://pin.it/ReJkAtoqK" target="_blank" aria-label="Pinterest">
+                    <img src="images/icon-pinterest.png" alt="Pinterest" width="20" height="20" />
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключаем скрипты -->
+    <script src="script.js"></script>
+</body>
+</html>
