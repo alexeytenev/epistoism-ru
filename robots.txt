@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ru.epistoism.org/sitemap.xml
