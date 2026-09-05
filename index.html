@@ -476,21 +476,24 @@
             });
     </script>
 
-    <!-- ===== ВСЕ СКРИПТЫ В ОДНОМ БЛОКЕ ===== -->
+       <!-- ===== ВСЕ СКРИПТЫ В ОДНОМ БЛОКЕ ===== -->
     <script>
-        // ===== БУРГЕР-МЕНЮ =====
-        document.addEventListener('DOMContentLoaded', function() {
-            const burgerBtn = document.getElementById('burgerBtn');
-            const mobileNav = document.getElementById('mobileNav');
+        // ===== БУРГЕР-МЕНЮ (с задержкой для загрузки header.html) =====
+        setTimeout(function() {
+            var burgerBtn = document.getElementById('burgerBtn');
+            var mobileNav = document.getElementById('mobileNav');
+            
+            console.log('Бургер найден:', burgerBtn);
+            console.log('Меню найдено:', mobileNav);
             
             if (burgerBtn && mobileNav) {
                 burgerBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
-                    mobileNav.classList.toggle('hidden');
-                    
-                    if (!mobileNav.classList.contains('hidden')) {
+                    if (mobileNav.classList.contains('hidden')) {
+                        mobileNav.classList.remove('hidden');
                         document.body.style.overflow = 'hidden';
                     } else {
+                        mobileNav.classList.add('hidden');
                         document.body.style.overflow = 'auto';
                     }
                 });
@@ -510,25 +513,27 @@
                         document.body.style.overflow = 'auto';
                     }
                 });
+            } else {
+                console.log('Не удалось найти бургер или меню');
             }
-        });
+        }, 500);
 
         // ===== СЛАЙДЕР =====
         (function() {
-            const track = document.getElementById('sliderTrack');
+            var track = document.getElementById('sliderTrack');
             if (!track) return;
             
-            const slides = track.querySelectorAll('.slider-slide');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const dotsContainer = document.getElementById('dotsContainer');
+            var slides = track.querySelectorAll('.slider-slide');
+            var prevBtn = document.getElementById('prevBtn');
+            var nextBtn = document.getElementById('nextBtn');
+            var dotsContainer = document.getElementById('dotsContainer');
 
-            let currentIndex = 0;
-            const totalSlides = slides.length;
+            var currentIndex = 0;
+            var totalSlides = slides.length;
 
             if (dotsContainer) {
-                for (let i = 0; i < totalSlides; i++) {
-                    const dot = document.createElement('button');
+                for (var i = 0; i < totalSlides; i++) {
+                    var dot = document.createElement('button');
                     dot.setAttribute('data-index', i);
                     if (i === 0) dot.classList.add('active');
                     dot.addEventListener('click', function() {
@@ -544,7 +549,7 @@
                 currentIndex = index;
                 track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
                 if (dotsContainer) {
-                    const dots = dotsContainer.querySelectorAll('button');
+                    var dots = dotsContainer.querySelectorAll('button');
                     dots.forEach(function(dot, i) {
                         dot.classList.toggle('active', i === currentIndex);
                     });
@@ -557,9 +562,9 @@
 
         // ===== МОДАЛЬНОЕ ОКНО =====
         (function() {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const closeBtn = document.getElementById('modalClose');
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById('modalImage');
+            var closeBtn = document.getElementById('modalClose');
 
             if (!modal || !modalImg) return;
 
@@ -587,9 +592,9 @@
 
         // ===== АНИМАЦИЯ ПРИ СКРОЛЛЕ =====
         document.addEventListener('DOMContentLoaded', function() {
-            const animateElements = document.querySelectorAll('.fade-up');
+            var animateElements = document.querySelectorAll('.fade-up');
 
-            const observer = new IntersectionObserver(function(entries) {
+            var observer = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('fade-up-visible');
