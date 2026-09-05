@@ -239,35 +239,58 @@
             .modal-close { font-size: 36px; top: 15px; right: 25px; }
             .modal-overlay { padding: 20px; }
         }
+
+        /* ===== БУРГЕР ДЛЯ МОБИЛЬНЫХ ===== */
+        @media (max-width: 768px) {
+            #burgerBtn {
+                display: flex !important;
+                cursor: pointer;
+                z-index: 9999;
+            }
+        }
+        #burgerBtn {
+            display: none;
+        }
+        #mobileNav {
+            position: fixed;
+            top: 65px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 9998;
+            padding: 40px 20px;
+            overflow-y: auto;
+        }
+        #mobileNav.hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
 
-    <!-- ===== ШАПКА (вставлена напрямую, без fetch) ===== -->
+    <!-- ===== ШАПКА ===== -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-black/5 h-[65px] flex items-center">
         <div class="container-custom w-full flex justify-between items-center">
             
-            <!-- БУРГЕР (слева, только на мобильных) -->
-            <button id="burgerBtn" class="md:hidden flex flex-col gap-1.5 p-2 -ml-2" aria-label="Меню">
+            <!-- БУРГЕР -->
+            <button id="burgerBtn" class="flex flex-col gap-1.5 p-2" aria-label="Меню" style="display:none;">
                 <span class="block w-7 h-0.5 bg-black"></span>
                 <span class="block w-7 h-0.5 bg-black"></span>
                 <span class="block w-7 h-0.5 bg-black"></span>
             </button>
 
-            <!-- ЛОГОТИП -->
-            <a href="/" class="text-2xl font-bold text-black font-playfair md:ml-0 mx-auto md:mx-0">Эпистоизм</a>
+            <a href="/" class="text-2xl font-bold text-black font-playfair mx-auto md:mx-0">Эпистоизм</a>
             
-            <!-- ДЕСКТОПНОЕ МЕНЮ -->
             <nav class="hidden md:flex gap-8 text-xl font-medium text-[#222222]">
-                <a href="/#home" class="hover:text-[#4a69ff] active:text-[#1771f1] border-b-2 border-transparent hover:border-[#4a69ff] active:border-[#1771f1]">Эпистоизм</a>
-                <a href="/#core" class="hover:text-[#4a69ff]">Основа</a>
-                <a href="/#practice" class="hover:text-[#4a69ff]">Применение</a>
-                <a href="/articles/" class="hover:text-[#4a69ff]">Статьи</a>
-                <a href="/#gallery" class="hover:text-[#4a69ff]">Галерея</a>
-                <a href="/#contact" class="hover:text-[#4a69ff]">Контакты</a>
+                <a href="/#home">Эпистоизм</a>
+                <a href="/#core">Основа</a>
+                <a href="/#practice">Применение</a>
+                <a href="/articles/">Статьи</a>
+                <a href="/#gallery">Галерея</a>
+                <a href="/#contact">Контакты</a>
             </nav>
 
-            <!-- ИКОНКИ СОЦСЕТЕЙ (только на десктопе) -->
             <div class="hidden md:flex gap-3 items-center">
                 <a href="mailto:epistoism@mail.ru" aria-label="Email" class="social-icon text-black">
                     <svg viewBox="0 0 100 100" class="w-6 h-6"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM51.8276 49.2076L74.191 33.6901C73.4347 32.6649 72.2183 32 70.8466 32H29.1534C27.8336 32 26.6576 32.6156 25.8968 33.5752L47.5881 49.172C48.8512 50.0802 50.5494 50.0945 51.8276 49.2076ZM75 63.6709V37.6286L53.4668 52.57C51.1883 54.151 48.1611 54.1256 45.9095 52.5066L25 37.4719V63.6709C25 65.9648 26.8595 67.8243 29.1534 67.8243H70.8466C73.1405 67.8243 75 65.9648 75 63.6709Z"/></svg>
@@ -283,19 +306,18 @@
                 </a>
             </div>
 
-            <!-- ПУСТОЙ БЛОК для баланса на мобильных -->
             <div class="md:hidden w-10"></div>
         </div>
 
-        <!-- ===== МОБИЛЬНОЕ МЕНЮ ===== -->
-        <div id="mobileNav" class="hidden md:hidden fixed top-[65px] left-0 right-0 bottom-0 bg-white/95 backdrop-blur-sm border-b border-black/5 shadow-lg overflow-y-auto z-40">
-            <nav class="flex flex-col items-center gap-6 py-8 px-4 text-xl font-medium text-[#222222]">
-                <a href="/#home" class="hover:text-[#4a69ff]">Эпистоизм</a>
-                <a href="/#core" class="hover:text-[#4a69ff]">Основа</a>
-                <a href="/#practice" class="hover:text-[#4a69ff]">Применение</a>
-                <a href="/articles/" class="hover:text-[#4a69ff]">Статьи</a>
-                <a href="/#gallery" class="hover:text-[#4a69ff]">Галерея</a>
-                <a href="/#contact" class="hover:text-[#4a69ff]">Контакты</a>
+        <!-- МОБИЛЬНОЕ МЕНЮ -->
+        <div id="mobileNav" class="hidden">
+            <nav class="flex flex-col items-center gap-6 text-xl font-medium text-[#222222]">
+                <a href="/#home">Эпистоизм</a>
+                <a href="/#core">Основа</a>
+                <a href="/#practice">Применение</a>
+                <a href="/articles/">Статьи</a>
+                <a href="/#gallery">Галерея</a>
+                <a href="/#contact">Контакты</a>
                 <div class="flex gap-6 mt-4">
                     <a href="mailto:epistoism@mail.ru" aria-label="Email" class="social-icon text-black">
                         <svg viewBox="0 0 100 100" class="w-6 h-6"><path fill-rule="evenodd" clip-rule="evenodd" d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100ZM51.8276 49.2076L74.191 33.6901C73.4347 32.6649 72.2183 32 70.8466 32H29.1534C27.8336 32 26.6576 32.6156 25.8968 33.5752L47.5881 49.172C48.8512 50.0802 50.5494 50.0945 51.8276 49.2076ZM75 63.6709V37.6286L53.4668 52.57C51.1883 54.151 48.1611 54.1256 45.9095 52.5066L25 37.4719V63.6709C25 65.9648 26.8595 67.8243 29.1534 67.8243H70.8466C73.1405 67.8243 75 65.9648 75 63.6709Z"/></svg>
@@ -330,7 +352,7 @@
         </div>
     </section>
 
-    <!-- ===== БЛОК: Почему современный человек теряет внутреннюю опору ===== -->
+    <!-- ===== ОСТАЛЬНЫЕ СЕКЦИИ (сокращено для экономии места) ===== -->
     <section class="py-24 bg-white flex items-center">
         <div class="container-custom text-center max-w-3xl mx-auto">
             <h2 class="text-2xl font-semibold mb-8 fade-up">Почему современный человек теряет внутреннюю опору</h2>
@@ -344,7 +366,6 @@
         </div>
     </section>
 
-    <!-- ===== БЛОК: Эпистоизм — практическое решение ===== -->
     <section class="py-24 bg-beige flex items-center">
         <div class="container-custom grid md:grid-cols-2 gap-12 items-center">
             <div class="fade-up">
@@ -365,7 +386,6 @@
         </div>
     </section>
 
-    <!-- ===== БЛОК: Четыре опоры внутренней гармонии ===== -->
     <section id="core" class="py-28 bg-white flex items-center">
         <div class="container-custom text-center">
             <h2 class="font-playfair text-4xl md:text-5xl font-semibold mb-2 fade-up">Четыре опоры внутренней гармонии</h2>
@@ -398,7 +418,6 @@
         </div>
     </section>
 
-    <!-- ===== БЛОК: Баланс вместо крайностей ===== -->
     <section class="py-28 bg-beige flex items-center">
         <div class="container-custom text-center max-w-3xl mx-auto">
             <h2 class="text-3xl font-bold mb-8 fade-up">Баланс вместо крайностей</h2>
@@ -410,7 +429,6 @@
         </div>
     </section>
 
-    <!-- ===== БЛОК: Где это работает ===== -->
     <section id="practice" class="py-28 bg-gray-light flex items-center">
         <div class="container-custom max-w-4xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 fade-up">Где это работает</h2>
@@ -438,12 +456,10 @@
         </div>
     </section>
 
-    <!-- ===== БЛОК: ГАЛЕРЕЯ (карусель) ===== -->
     <section id="gallery" class="py-24 bg-white flex items-center">
         <div class="container-custom text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-2 fade-up">Как это выглядит в жизни</h2>
             <p class="text-xl font-semibold text-gray-600 mb-8 fade-up fade-up-delay-1">Визуальный эпистоизм</p>
-
             <div class="slider-container max-w-4xl mx-auto fade-up fade-up-delay-2">
                 <div class="slider-track" id="sliderTrack">
                     <div class="slider-slide"><img src="images/tild6362-3365-4036-b334-643362353130__scale_1200jpg.webp" alt="Слайд 1" loading="lazy" /></div>
@@ -466,13 +482,11 @@
         </div>
     </section>
 
-    <!-- ===== МОДАЛЬНОЕ ОКНО ===== -->
     <div class="modal-overlay" id="imageModal">
         <span class="modal-close" id="modalClose">&times;</span>
         <img src="" alt="Увеличенное изображение" id="modalImage" />
     </div>
 
-    <!-- ===== БЛОК: Это не идея. Это образ жизни ===== -->
     <section class="relative py-64 flex items-end justify-center bg-beige" style="background: url('images/tild3764-6231-4639-a432-626532653564___.jpg') 70% 54% / cover no-repeat;">
         <div class="absolute inset-0 bg-beige/60"></div>
         <div class="relative z-10 container-custom text-center max-w-4xl mx-auto">
@@ -489,7 +503,6 @@
         </div>
     </section>
 
-    <!-- ===== БЛОК: КОНТАКТЫ ===== -->
     <section id="contact" class="py-64 bg-white flex items-center">
         <div class="container-custom text-center max-w-2xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-semibold uppercase mb-4 fade-up">Контакты</h2>
@@ -529,48 +542,40 @@
             });
     </script>
 
-    <!-- ===== ВСЕ СКРИПТЫ В ОДНОМ БЛОКЕ ===== -->
+    <!-- ===== СКРИПТЫ ===== -->
     <script>
-        // ===== БУРГЕР-МЕНЮ =====
+        // Ждём полной загрузки страницы
         document.addEventListener('DOMContentLoaded', function() {
-            var burgerBtn = document.getElementById('burgerBtn');
-            var mobileNav = document.getElementById('mobileNav');
+            var burger = document.getElementById('burgerBtn');
+            var menu = document.getElementById('mobileNav');
             
-            console.log('Бургер найден:', burgerBtn);
-            console.log('Меню найдено:', mobileNav);
-            
-            if (burgerBtn && mobileNav) {
-                burgerBtn.addEventListener('click', function(e) {
+            // Проверяем, есть ли элементы
+            if (burger && menu) {
+                // Показываем бургер на мобильных
+                burger.style.display = 'flex';
+                
+                // Клик по бургеру
+                burger.addEventListener('click', function(e) {
+                    e.preventDefault();
                     e.stopPropagation();
-                    if (mobileNav.classList.contains('hidden')) {
-                        mobileNav.classList.remove('hidden');
-                        document.body.style.overflow = 'hidden';
-                    } else {
-                        mobileNav.classList.add('hidden');
-                        document.body.style.overflow = 'auto';
-                    }
+                    menu.classList.toggle('hidden');
                 });
                 
-                mobileNav.querySelectorAll('a').forEach(function(link) {
-                    link.addEventListener('click', function() {
-                        mobileNav.classList.add('hidden');
-                        document.body.style.overflow = 'auto';
+                // Клик по ссылкам закрывает меню
+                var links = menu.querySelectorAll('a');
+                for (var i = 0; i < links.length; i++) {
+                    links[i].addEventListener('click', function() {
+                        menu.classList.add('hidden');
                     });
-                });
-                
-                document.addEventListener('click', function(e) {
-                    if (!mobileNav.classList.contains('hidden') && 
-                        !burgerBtn.contains(e.target) && 
-                        !mobileNav.contains(e.target)) {
-                        mobileNav.classList.add('hidden');
-                        document.body.style.overflow = 'auto';
-                    }
-                });
+                }
             } else {
-                console.log('Не удалось найти бургер или меню');
+                console.log('Бургер или меню не найдены!');
             }
         });
+    </script>
 
+    <!-- ===== ОСТАЛЬНЫЕ СКРИПТЫ ===== -->
+    <script>
         // ===== СЛАЙДЕР =====
         (function() {
             var track = document.getElementById('sliderTrack');
