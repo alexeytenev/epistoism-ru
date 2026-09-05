@@ -25,7 +25,7 @@
     <!-- SEO -->
     <meta name="description" content="Образ жизни, в котором ваш внутренний мир не зависит от внешнего" />
     <meta name="keywords" content="стоицизм, эпикуреизм, дао,эпистоизм,философия жизни, внутренняя устойчивость, саморазвитие, психология, жизненные принципы, осознанность, стоицизм" />
-    <link rel="canonical" href="https://epistoism.ru" />
+    <link rel="canonical" href="https://ru.epistoism.org" />
 
     <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -257,7 +257,6 @@
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data)
             .catch(() => {
-                // Если header.html не загрузился — показываем заглушку
                 document.getElementById('header').innerHTML = '<div style="height:65px;"></div>';
             });
     </script>
@@ -319,25 +318,21 @@
             <h2 class="font-playfair text-4xl md:text-5xl font-semibold mb-2 fade-up">Четыре опоры внутренней гармонии</h2>
             <p class="text-2xl font-semibold mb-10 fade-up fade-up-delay-1">Тетрас Эпистоизма</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Стоицизм -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition fade-up fade-up-delay-2">
                     <img src="images/tild6164-6539-4139-a639-353735666665__photo.png" alt="Стоицизм" class="w-20 h-20 mx-auto mb-4" />
                     <h3 class="text-2xl font-bold mb-2">Стоицизм</h3>
                     <p class="text-lg text-gray-600">Ясность мышления:<br>Различай, что зависит от тебя.<br>Не трать силы на лишнее.</p>
                 </div>
-                <!-- Эпикуреизм -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition fade-up fade-up-delay-3">
                     <img src="images/tild6431-3839-4064-b237-633166653533__photo.png" alt="Эпикуреизм" class="w-20 h-20 mx-auto mb-4" />
                     <h3 class="text-2xl font-bold mb-2">Эпикуреизм</h3>
                     <p class="text-lg text-gray-600">Простота:<br>Радость в простых вещах.<br>Спокойная жизнь без излишеств.</p>
                 </div>
-                <!-- Даосизм -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition fade-up fade-up-delay-4">
                     <img src="images/tild3061-3566-4062-a466-646639633632__photo.png" alt="Даосизм" class="w-20 h-20 mx-auto mb-4" />
                     <h3 class="text-2xl font-bold mb-2">Даосизм</h3>
                     <p class="text-lg text-gray-600">Естественность:<br>Действуй по ситуации.<br>Следуй потоку жизни.</p>
                 </div>
-                <!-- Мудрость -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition fade-up fade-up-delay-5">
                     <img src="images/tild3033-3933-4835-a336-363236333064__photo.png" alt="Мудрость" class="w-20 h-20 mx-auto mb-4" />
                     <h3 class="text-2xl font-bold mb-2">Мудрость</h3>
@@ -477,7 +472,6 @@
             .then(response => response.text())
             .then(data => document.getElementById('footer').innerHTML = data)
             .catch(() => {
-                // Если footer.html не загрузился — показываем заглушку
                 document.getElementById('footer').innerHTML = '<div style="height:60px;background:#111;color:#fff;text-align:center;padding:20px;">© Эпистоизм. Философия устойчивости. Алексей Тенев</div>';
             });
     </script>
@@ -485,7 +479,6 @@
     <!-- ===== СКРИПТЫ ===== -->
     <script>
         // ===== БУРГЕР-МЕНЮ =====
-        // Ждём, пока загрузится header.html
         setTimeout(() => {
             const burgerBtn = document.getElementById('burgerBtn');
             const mobileNav = document.getElementById('mobileNav');
