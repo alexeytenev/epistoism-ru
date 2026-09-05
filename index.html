@@ -476,50 +476,48 @@
             });
     </script>
 
-    <!-- ===== СКРИПТЫ ===== -->
+    <!-- ===== ВСЕ СКРИПТЫ В ОДНОМ БЛОКЕ ===== -->
     <script>
-    // ===== БУРГЕР-МЕНЮ =======
-document.addEventListener('DOMContentLoaded', function() {
-    const burgerBtn = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    
-    if (burgerBtn && mobileNav) {
-        // Открытие/закрытие по клику на бургер
-        burgerBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            mobileNav.classList.toggle('hidden');
+        // ===== БУРГЕР-МЕНЮ =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerBtn = document.getElementById('burgerBtn');
+            const mobileNav = document.getElementById('mobileNav');
             
-            // Блокируем скролл страницы, когда меню открыто
-            if (!mobileNav.classList.contains('hidden')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
+            if (burgerBtn && mobileNav) {
+                burgerBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    mobileNav.classList.toggle('hidden');
+                    
+                    if (!mobileNav.classList.contains('hidden')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+                
+                mobileNav.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        mobileNav.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!mobileNav.classList.contains('hidden') && 
+                        !burgerBtn.contains(e.target) && 
+                        !mobileNav.contains(e.target)) {
+                        mobileNav.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
             }
         });
-        
-        // Закрываем меню при клике на любую ссылку внутри
-        mobileNav.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                mobileNav.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            });
-        });
-        
-        // Закрываем меню при клике вне его
-        document.addEventListener('click', function(e) {
-            if (!mobileNav.classList.contains('hidden') && 
-                !burgerBtn.contains(e.target) && 
-                !mobileNav.contains(e.target)) {
-                mobileNav.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    }
-});
 
         // ===== СЛАЙДЕР =====
-        const track = document.getElementById('sliderTrack');
-        if (track) {
+        (function() {
+            const track = document.getElementById('sliderTrack');
+            if (!track) return;
+            
             const slides = track.querySelectorAll('.slider-slide');
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
@@ -533,7 +531,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const dot = document.createElement('button');
                     dot.setAttribute('data-index', i);
                     if (i === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => goToSlide(i));
+                    dot.addEventListener('click', function() {
+                        goToSlide(parseInt(this.getAttribute('data-index')));
+                    });
                     dotsContainer.appendChild(dot);
                 }
             }
@@ -542,25 +542,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (index < 0) index = totalSlides - 1;
                 if (index >= totalSlides) index = 0;
                 currentIndex = index;
-                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
                 if (dotsContainer) {
-                    document.querySelectorAll('.slider-dots button').forEach((dot, i) => {
+                    const dots = dotsContainer.querySelectorAll('button');
+                    dots.forEach(function(dot, i) {
                         dot.classList.toggle('active', i === currentIndex);
                     });
                 }
             }
 
-            if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-            if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-        }
+            if (prevBtn) prevBtn.addEventListener('click', function() { goToSlide(currentIndex - 1); });
+            if (nextBtn) nextBtn.addEventListener('click', function() { goToSlide(currentIndex + 1); });
+        })();
 
         // ===== МОДАЛЬНОЕ ОКНО =====
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const closeBtn = document.getElementById('modalClose');
+        (function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.getElementById('modalClose');
 
-        if (modal && modalImg) {
-            document.querySelectorAll('.slider-slide img').forEach(img => {
+            if (!modal || !modalImg) return;
+
+            document.querySelectorAll('.slider-slide img').forEach(function(img) {
                 img.addEventListener('click', function() {
                     modal.classList.add('active');
                     modalImg.src = this.src;
@@ -568,28 +571,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
 
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeModal);
-            }
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeModal();
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') closeModal();
-            });
-
             function closeModal() {
                 modal.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
-        }
+
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+            });
+        })();
 
         // ===== АНИМАЦИЯ ПРИ СКРОЛЛЕ =====
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             const animateElements = document.querySelectorAll('.fade-up');
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('fade-up-visible');
                         observer.unobserve(entry.target);
@@ -600,17 +601,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 rootMargin: '0px 0px -50px 0px'
             });
 
-            animateElements.forEach(el => observer.observe(el));
+            animateElements.forEach(function(el) {
+                observer.observe(el);
+            });
         });
 
         // ===== ПЛАВНАЯ ПРОКРУТКА ПО ЯКОРЯМ =====
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
+                var target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
-                    const headerHeight = 65;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    var headerHeight = 65;
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             });
