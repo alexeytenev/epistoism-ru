@@ -25,11 +25,10 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ===== СТАТЬЯ 2: Сюда добавляйте следующую статью ===== -->
-  <!--
+     <!-- ===== СТАТЬЯ 2: Эпикуреизм сегодня ===== -->
   <url>
-    <loc>https://ru.epistoism.org/articles/nazvanie-vtoroy-statii.html</loc>
-    <lastmod>2026-09-XX</lastmod>
+    <loc>https://ru.epistoism.org/articles/epikureism.segodnya.html</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
