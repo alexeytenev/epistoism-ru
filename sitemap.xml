@@ -4,7 +4,7 @@
   <!-- ===== ГЛАВНАЯ СТРАНИЦА ===== -->
   <url>
     <loc>https://ru.epistoism.org/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,32 +12,41 @@
   <!-- ===== СТРАНИЦА СО ВСЕМИ СТАТЬЯМИ (АРХИВ) ===== -->
   <url>
     <loc>https://ru.epistoism.org/articles/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ===== СТАТЬЯ 1: Финансовая подушка безопасности ===== -->
+  <!-- ===== СТАТЬЯ 1: У каждого своя правда ===== -->
   <url>
-    <loc>https://ru.epistoism.org/articles/kak-raschitat-zapas-prochtosti.html</loc>
+    <loc>https://ru.epistoism.org/articles/svoja-pravda-manipulyaciya.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== СТАТЬЯ 2: Эпитафия Эпикура ===== -->
+  <url>
+    <loc>https://ru.epistoism.org/articles/epitafia.epicura.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== СТАТЬЯ 3: Эпикуреизм сегодня ===== -->
+  <url>
+    <loc>https://ru.epistoism.org/articles/epikureism.segodnya.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== СТАТЬЯ 4: Финансовая подушка безопасности ===== -->
+  <url>
+    <loc>https://ru.epistoism.org/articles/kak-raschitat-zapas-prochttosti.html</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-     <!-- ===== СТАТЬЯ 2: Эпикуреизм сегодня ===== -->
-  <url>
-    <loc>https://ru.epistoism.org/articles/epikureism.segodnya.html</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  -->
-
-   <url>
-    <loc>https://ru.epistoism.org/articles/epitafia.epicura.html</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 </urlset>
